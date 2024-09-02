@@ -31,11 +31,9 @@ const Login = () => {
       <button onClick={() => navigate(-1)}>
         <FaArrowLeft />
       </button>
-      <h1 className="font-serif text-center text-2xl">Iniciar sesión</h1>
+      <img className="place-self-center ml-8" src="images/png/LOGO.png" alt="logo" />
+      <h1 className="text-center text-2xl">LOGIN</h1>
       <form className="flex flex-col gap-1" onSubmit={formik.handleSubmit}>
-        <label className="font-bold" htmlFor="email">
-          Correo electrónico
-        </label>
         <input
           className={
             formik.touched.email && formik.errors.email
@@ -45,14 +43,12 @@ const Login = () => {
           type="email"
           id="email"
           name="email"
+          placeholder="Email"
           {...formik.getFieldProps("email")}
         />
         {formik.touched.email && formik.errors.email ? (
           <span className="text-red-400">{formik.errors.email}</span>
         ) : null}
-        <label className="font-bold" htmlFor="password">
-          Contraseña
-        </label>
         <div className="flex relative items-center">
           <input
             className={
@@ -63,6 +59,7 @@ const Login = () => {
             type={showPassword ? "text" : "password"}
             id="password"
             name="password"
+            placeholder="Passoword"
             {...formik.getFieldProps("password")}
           />
           <button
@@ -82,17 +79,19 @@ const Login = () => {
         ) : null}
         <button
           type="submit"
-          className="p-4 bg-orange-500 text-white rounded mt-3 hover:bg-orange-600"
+          className="p-2 bg-rose-500 text-white mt-6"
+          onClick={() => navigate('/')}
         >
-          Iniciar sesión
+          Login
         </button>
       </form>
-      <p>
-        Si aún no tiene una cuenta por favor haga click{" "}
-        <Link className="text-sky-900 underline" to={"/register"}>
-          aquí!
-        </Link>
-      </p>
+      <p className="text-center mt-10">¿You don't have an account?</p>
+      <button
+          className="p-2 bg-rose-500 text-white rounded"
+          onClick={() => navigate('/register')}
+        >
+          Register
+        </button>
     </main>
   );
 };

@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { Formik } from "formik";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import fileUpload from "../../services/fileUpload";
+import { createUser } from "../../services/userServices";
 
 const passwordRegex =
   /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/;
 
 const Register = () => {
+  const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState({
     password: false,
     repeatPassword: false,
@@ -26,7 +28,7 @@ const Register = () => {
   };
   return (
     <main className="flex flex-col grow gap-3.5 mt-3 px-2">
-      <h1 className="font-serif text-center text-2xl">Cree una cuenta</h1>
+      <h1 className="font-serif text-center text-2xl">Create an account</h1>
       <Formik
         initialValues={{
           name: "",
@@ -70,6 +72,14 @@ const Register = () => {
           if (profileImage) {
             values.avatar = profileImage;
             console.table(values);
+            const newUser = await createUser(values);
+            console.table(newUser);
+            if (newUser) {
+              alert("Su cuenta ha sido creada exitosamente");
+              navigate('/login');
+            } else {
+              alert("Ha ocurrido un error en la creación de su cuenta");
+            }
           } else {
             alert("Ha ocurrido un error en la carga de la imagen");
           }
@@ -77,12 +87,10 @@ const Register = () => {
       >
         {({ handleSubmit, getFieldProps, errors, touched, setFieldValue }) => (
           <form className="flex flex-col gap-1" onSubmit={handleSubmit}>
-            <label className="font-bold" htmlFor="name">
-              Nombre completo:
-            </label>
             <input
               type="text"
               id="name"
+              placeholder="Full Name"
               {...getFieldProps("name")}
               className={
                 touched.name && errors.name
@@ -93,10 +101,8 @@ const Register = () => {
             {touched.name && errors.name ? (
               <span className="text-pink-600">{errors.name}</span>
             ) : null}
-            <label className="font-bold" htmlFor="email">
-              Correo electrónico:
-            </label>
             <input
+            placeholder="Email"
               type="email"
               id="email"
               {...getFieldProps("email")}
@@ -109,11 +115,9 @@ const Register = () => {
             {touched.email && errors.email ? (
               <span className="text-pink-600">{errors.email}</span>
             ) : null}
-            <label className="font-bold" htmlFor="password">
-              Contraseña:
-            </label>
             <div className=" flex relative items-center">
               <input
+              placeholder="Password"
                 type={showPassword.password ? "text" : "password"}
                 id="password"
                 {...getFieldProps("password")}
@@ -138,11 +142,10 @@ const Register = () => {
             {touched.password && errors.password ? (
               <span className="text-pink-600">{errors.password}</span>
             ) : null}
-            <label className="font-bold" htmlFor="repeatPasswod">
-              Confirmar contraseña:
-            </label>
             <div className=" flex relative items-center">
               <input
+                placeholder="Confirm Password"
+
                 type={showPassword.repeatPassword ? "text" : "password"}
                 id="repeatPassword"
                 {...getFieldProps("repeatPassword")}
@@ -168,7 +171,7 @@ const Register = () => {
               <span className="text-pink-600">{errors.repeatPassword}</span>
             ) : null}
             <label className="font-bold" htmlFor="avatar">
-              Escoja su foto de perfil:
+              Photo:
             </label>
             <div className="flex items-center space-x-6">
               <figure className="shrink-0">
@@ -188,6 +191,7 @@ const Register = () => {
                     setImage(URL.createObjectURL(file));
                   }
                 }}
+                accept="image/*"
                 className={
                   touched.avatar && errors.avatar
                     ? "p-4 rounded border border-pink-500 text-pink-600 focus:ring-pink-500 text-transparent w-full text-sm"
@@ -199,18 +203,18 @@ const Register = () => {
               <span className="text-pink-600">{errors.avatar}</span>
             ) : null}
             <button
-              className="p-4 bg-orange-500 text-white rounded mt-3 hover:bg-orange-600"
-              type="submit"
-            >
-              Crear cuenta
-            </button>
+                type="submit"
+                className="p-2 bg-rose-500 text-white mt-6"
+              >
+                Crear Cuenta
+              </button>
           </form>
         )}
       </Formik>
-      <p>
-        Si usted ya tiene una cuenta registrada inicie sesión{" "}
+      <p className="text-gray-500 text-center">
+        If you already have a registered account, log in{" "}
         <Link className="text-sky-900 underline" to={"/login"}>
-          aquí!
+          Here!
         </Link>
       </p>
     </main>

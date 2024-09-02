@@ -55,7 +55,8 @@ const HomePage = () => {
   return (
     // flex justify-normal h-screen bg-red-700 sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl
     // text-3xl font-bold w-full max-w-md mx-auto
-    <div className="sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl">
+    <div className="">
+    {/* <div className="sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl"> */}
       {/* <Header /> */}
       <div className="flex justify-between p-4  ">
         <img
@@ -71,7 +72,7 @@ const HomePage = () => {
       {/* <header className="p-4 bg-gray-800 text-white">
         <h1 className="text-3xl align text-center">My Instagram Clone</h1>
       </header> */}
-      <main className="w-full max-w-4xl mt-4 ">
+      <main className="w-full mt-4 ">
         <section className="flex overflow-x-auto justify-between">
           <figure className="flex-none">
             <div className="relative inline-block">

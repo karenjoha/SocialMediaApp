@@ -9,6 +9,7 @@ import Register from "../pages/Register/Register"
 import News from "../pages/News/News"
 import NewsDetails from "../pages/NewsDetails/NewsDetails"
 import AdminPanel from "../pages/AdminPanel/AdminPanel"
+import ProfilePage from "../pages/ProfilePage/ProfilePage"
 
 
 const AppRouter = () => {
@@ -28,6 +29,7 @@ const AppRouter = () => {
                           <Route path=":newsId" element={<NewsDetails/> } />
                       </Route>
                       <Route path="admin" element={<AdminPanel/> } />
+                      <Route path="/profile" element={<ProfilePage />} />
                   </Route>
               {/* </Route> */}
           </Routes>

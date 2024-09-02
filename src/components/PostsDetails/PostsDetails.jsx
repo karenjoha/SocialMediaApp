@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import endpoints from '../../config'; 
 import Posts from "../Posts/Posts";
+import { Link } from 'react-router-dom';
+
 
 const PostsDetails = () => {
     const [users, setUsers] = useState([]);
@@ -42,8 +44,9 @@ const PostsDetails = () => {
                 alt={user.name}
                 className="w-12 h-12 rounded-full object-cover"
               />
-              
-              <h2 className="text-xs">{user.username}</h2>
+              <Link to="/profile" className="text-xs" >
+            {user.name}
+          </Link>
             </header>
             <Posts/>
             <div className="mb-4">

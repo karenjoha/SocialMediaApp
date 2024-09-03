@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ProfilePage() {
   const [isFollowing, setIsFollowing] = useState(false);
@@ -116,7 +117,9 @@ function ProfilePage() {
       </div>
 
       {/* Grid */}
+      
       <div className="p-4 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 bg-white rounded-3xl">
+      <Link to="/postDetails">
         <div className="bg-gray-300 h-64 rounded-2xl">
           <img
             src="../public/images/png/public1.png"
@@ -124,6 +127,7 @@ function ProfilePage() {
             className="w-full h-full object-cover rounded-2xl"
           />
         </div>
+        </Link>
         <div className="bg-gray-300 h-64 rounded-2xl">
           <img
             src="../public/images/png/public2.png"

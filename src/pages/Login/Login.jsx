@@ -21,6 +21,7 @@ const Login = () => {
     }),
     onSubmit: (values) => {
       console.table(values);
+      navigate("/home");
     },
   });
 
@@ -59,7 +60,7 @@ const Login = () => {
             type={showPassword ? "text" : "password"}
             id="password"
             name="password"
-            placeholder="Passoword"
+            placeholder="Password"
             {...formik.getFieldProps("password")}
           />
           <button
@@ -79,21 +80,21 @@ const Login = () => {
         ) : null}
         <button
           type="submit"
-          className="p-2 bg-rose-500 text-white mt-6"
-          onClick={() => navigate('/')}
+          className="p-2 bg-roseColor text-white mt-6"
         >
           Login
         </button>
       </form>
-      <p className="text-center mt-10">¿You don't have an account?</p>
+      <p className="text-center mt-10">¿No tienes una cuenta?</p>
       <button
-          className="p-2 bg-rose-500 text-white rounded"
-          onClick={() => navigate('/register')}
-        >
-          Register
-        </button>
+        className="p-2 bg-roseColor text-white rounded"
+        onClick={() => navigate('/register')}
+      >
+        Register
+      </button>
     </main>
   );
 };
 
 export default Login;
+

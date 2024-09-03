@@ -204,7 +204,7 @@ const Register = () => {
             ) : null}
             <button
                 type="submit"
-                className="p-2 bg-rose-500 text-white mt-6"
+                className="p-2 bg-roseColor text-white mt-6"
               >
                 Crear Cuenta
               </button>

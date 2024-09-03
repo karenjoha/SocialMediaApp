@@ -10,7 +10,7 @@ import endpoints from "../../config";
 // ID quemado (fijo)
 const userId = "1";
 
-const AdminProfile = () => {
+const PostDetails = () => {
   const [user, setUser] = useState(null);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -152,4 +152,4 @@ const AdminProfile = () => {
   );
 };
 
-export default AdminProfile;
+export default PostDetails;

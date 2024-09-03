@@ -11,7 +11,8 @@ import NewsDetails from "../pages/NewsDetails/NewsDetails";
 import AdminPanel from "../pages/AdminPanel/AdminPanel";
 // import useAppContext from "../hooks/useAppContext";
 import AddNews from "../pages/AddNews/AddNews";
-import AdminProfile from "../pages/AdminProfile/AdminProfile";
+import ProfilePage from "../pages/ProfilePage/ProfilePage";
+import PostDetails from "../pages/PostDetails/PostDetails";
 
 
 const AppRouter = () => {
@@ -20,10 +21,11 @@ const AppRouter = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<HomePage />} />
+          <Route index element={<Register/>} />
           <Route path="*" element={<NoMatch />} />
           {/* <Route element={<PublicRoutes isAuthenticated={user.isAuth} />}> */}
             <Route path="login" element={<Login />} />
+            <Route path="home" element={<HomePage />} />
             <Route path="register" element={<Register />} />
           {/* </Route> */}
           {/* <Route element={<PrivateRoutes isAuthenticated={user.isAuth} />}> */}
@@ -32,7 +34,8 @@ const AppRouter = () => {
             </Route>
             <Route path="addNews" element={<AddNews/> } />
             <Route path="admin" element={<AdminPanel />} />
-            <Route path="profile" element={<AdminProfile />} />
+            <Route path="profile" element={<ProfilePage />} />
+            <Route path="postDetails" element={<PostDetails />} />
           {/* </Route> */}
         </Route>
       </Routes>

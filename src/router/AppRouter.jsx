@@ -13,6 +13,7 @@ import AdminPanel from "../pages/AdminPanel/AdminPanel";
 import AddNews from "../pages/AddNews/AddNews";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import PostDetails from "../pages/PostDetails/PostDetails";
+import UploadPost from "../components/UploadPost/uploadPost";
 
 
 const AppRouter = () => {
@@ -27,6 +28,7 @@ const AppRouter = () => {
             <Route path="login" element={<Login />} />
             <Route path="home" element={<HomePage />} />
             <Route path="register" element={<Register />} />
+            <Route path="upload" element={<UploadPost />} />
           {/* </Route> */}
           {/* <Route element={<PrivateRoutes isAuthenticated={user.isAuth} />}> */}
             <Route path="news" element={<News />}>

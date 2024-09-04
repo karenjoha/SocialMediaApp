@@ -15,7 +15,7 @@ const BottomNav = () => {
         <Link to="/search" className="flex-1 text-center">
           <IoSearchOutline className="text-ml sm:text-2xl" />
         </Link>
-        <Link to="/create" className="flex-1 text-center">
+        <Link to="/upload" className="flex-1 text-center">
           <CiSquarePlus className="text-ml sm:text-2xl" />
         </Link>
         <Link to="/liked" className="flex-1 text-center">

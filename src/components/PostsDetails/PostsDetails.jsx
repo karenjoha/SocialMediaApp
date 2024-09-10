@@ -34,7 +34,7 @@ const PostsDetails = () => {
     <div className="container mx-auto p-2">
       <section className="space-y-2">
         {users.map((user) => (
-          <article key={user.image} className=" bg-white p-4 rounded shadow">
+          <article key={user.id} className=" bg-white p-4 rounded shadow">
             <header className="flex items-center space-x-4 mb-4">
              
               <img

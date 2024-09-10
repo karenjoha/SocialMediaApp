@@ -13,8 +13,8 @@ const AppContextProvider = ({ children }) => {
     user: null,
     isAuth: true,
   });
-  const [news, newsDispatch] = useReducer(newsReducer, {
-    news: [],
+  const [post, postDispatch] = useReducer(postReducer, {
+    post: [],
     statusFilter: false,
     loading: false,
     error: null,
@@ -23,8 +23,8 @@ const AppContextProvider = ({ children }) => {
   const globalState = {
     user,
     userDispatch,
-    news,
-    newsDispatch,
+    post,
+    postDispatch,
   };
   return (
     <AppContext.Provider value={globalState}>{children}</AppContext.Provider>

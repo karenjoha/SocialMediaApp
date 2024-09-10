@@ -2,10 +2,10 @@ import { Formik } from "formik";
 import PropTypes from "prop-types";
 import fileUpload from "../../services/fileUpload";
 
-const NewsForm = ({ news = null, onSubmit }) => {
+const PostForm = ({ post = null, onSubmit }) => {
   const initialValues = {
-    title: news ? news.title : "",
-    description: news ? news.description : "",
+    title: post ? post.title : "",
+    description: post ? post.description : "",
     photo: null,
   };
   return (
@@ -34,16 +34,19 @@ const NewsForm = ({ news = null, onSubmit }) => {
               setFieldValue("photo", file);
             }}
           />
-          <button type="submit">{news ? "Actualizar" : "Crear"}</button>
+          <button type="submit">{post ? "Actualizar" : "Crear"}</button>
         </form>
       )}
     </Formik>
   );
 };
 
-NewsForm.propTypes = {
-  news: PropTypes.object,
+PostForm.propTypes = {
+  post: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
+  }),
   onSubmit: PropTypes.func.isRequired,
 };
 
-export default NewsForm;
+export default PostForm;

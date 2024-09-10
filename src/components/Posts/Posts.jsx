@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import endpoints from "../../config"; // Asegúrate de tener la URL correcta en tu archivo config
+import endpoints from "../../config";
 import { IoMdHeartEmpty } from "react-icons/io";
 import { FaRegComment } from "react-icons/fa6";
 import { FiSend } from "react-icons/fi";
@@ -38,7 +38,7 @@ const Posts = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  // Find user by ID helper function
+
   const findUserById = (id) => users.find((user) => user.id === id);
 
   return (
@@ -49,18 +49,6 @@ const Posts = () => {
 
           return (
             <article key={post.id} className="bg-white p-4 rounded shadow">
-              {/* <header className="flex items-center space-x-4 mb-4">
-                {user && (
-                  <>
-                    <img
-                      src={user.avatar}
-                      alt={user.username}
-                      className="w-12 h-12 rounded-full object-cover bg-black"
-                    />
-                    <h2 className="text-xl">{user.username}</h2>
-                  </>
-                )}
-              </header> */}
               <div className="mb-4">
                 <img
                   src={post.image}

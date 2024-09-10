@@ -26,7 +26,15 @@ const Login = () => {
   });
 
   const handleShowPassword = () => setShowPassword(!showPassword);
-
+  const handleLogin = async (values) => {
+    const { email, password } = values;
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      alert('Inicio de sesión exitoso');
+    } catch (error) {
+      alert(error.message);
+    }
+  };
   return (
     <main className="flex flex-col grow gap-3.5 mt-3 px-2">
       <button onClick={() => navigate(-1)}>

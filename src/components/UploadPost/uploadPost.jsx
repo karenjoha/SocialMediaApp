@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Webcam from 'react-webcam';
 import { useRef } from 'react';
+import PostForm from '../PostForm/PostForm';
+import BottomNav from '../BottomNav/BottomNav';
 
 
 
@@ -26,12 +28,6 @@ const UploadPost = () => {
     }
   };
 
-  const handlePublish = () => {
-    // Aquí puedes manejar la lógica para publicar la imagen
-    alert('Publicación confirmada');
-    // Reiniciar la imagen y el estado
-    setImage(null);
-  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
@@ -78,8 +74,13 @@ const UploadPost = () => {
           </button>
         </div>
       )}
+      <PostForm/>
+      <BottomNav/>
     </div>
+    
   );
+  
 };
+
 
 export default UploadPost;

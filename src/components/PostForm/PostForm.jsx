@@ -24,13 +24,8 @@ const NewsForm = ({ news = null, onSubmit }) => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Título de la noticia"
+            placeholder="Post description"
             {...getFieldProps("title")}
-          />
-          <input
-            type="text"
-            placeholder="Descripción de la noticia"
-            {...getFieldProps("description")}
           />
           <input
             type="file"

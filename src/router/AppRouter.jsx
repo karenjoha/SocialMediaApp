@@ -6,11 +6,7 @@ import HomePage from "../pages/HomePage/HomePage";
 import NoMatch from "../pages/NoMatch/NoMatch";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
-import News from "../pages/News/News";
-import NewsDetails from "../pages/NewsDetails/NewsDetails";
-import AdminPanel from "../pages/AdminPanel/AdminPanel";
 // import useAppContext from "../hooks/useAppContext";
-import AddNews from "../pages/AddNews/AddNews";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
 import PostDetails from "../pages/PostDetails/PostDetails";
 import UploadPost from "../components/UploadPost/uploadPost";
@@ -22,7 +18,7 @@ const AppRouter = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Register/>} />
+          <Route index element={<Login/>} />
           <Route path="*" element={<NoMatch />} />
           {/* <Route element={<PublicRoutes isAuthenticated={user.isAuth} />}> */}
             <Route path="login" element={<Login />} />
@@ -31,11 +27,6 @@ const AppRouter = () => {
             <Route path="upload" element={<UploadPost />} />
           {/* </Route> */}
           {/* <Route element={<PrivateRoutes isAuthenticated={user.isAuth} />}> */}
-            <Route path="news" element={<News />}>
-              <Route path=":newsId" element={<NewsDetails />} />
-            </Route>
-            <Route path="addNews" element={<AddNews/> } />
-            <Route path="admin" element={<AdminPanel />} />
             <Route path="profile" element={<ProfilePage />} />
             <Route path="postDetails" element={<PostDetails />} />
           {/* </Route> */}

@@ -4,7 +4,6 @@ import endpoints from '../../config';
 import Posts from "../Posts/Posts";
 import { Link } from 'react-router-dom';
 
-
 const PostsDetails = () => {
     const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -31,7 +30,6 @@ const PostsDetails = () => {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-
   return (
     <div className="container mx-auto p-2">
       <section className="space-y-2">
@@ -49,14 +47,8 @@ const PostsDetails = () => {
           </Link>
             </header>
             <Posts/>
-            <div className="mb-4">
-              {/* <img
-                src={post.image}
-                alt="Post content"
-                className="w-full rounded object-cover"
-              /> */}
+            <div className="mb-4">  
             </div>
-            {/* <p>{post.caption}</p> */}
           </article>
         ))}
       </section>

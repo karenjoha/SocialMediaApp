@@ -14,7 +14,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('URL_DEL_MINIBACKEND');
+        const response = await axios.get('https://minibackend-findy-cr53.vercel.app/');
         setUsers(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);

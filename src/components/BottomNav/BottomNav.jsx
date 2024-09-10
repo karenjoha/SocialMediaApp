@@ -9,7 +9,7 @@ const BottomNav = () => {
   return (
     <div className="fixed bottom-0 left-0 w-full bg-roseColor">
       <nav className="flex justify-between items-center p-0.4 w-full text-white">
-        <Link to="/" className="flex-1 text-center">
+        <Link to="/home" className="flex-1 text-center">
           <AiOutlineHome className="text-ml sm:text-2xl" />
         </Link>
         <Link to="/search" className="flex-1 text-center">

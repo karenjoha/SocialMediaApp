@@ -1,6 +1,6 @@
 const fileUpload = async (file) => {
-  const cloudName = "dspyfujx0";
-  const uploadPreset = "cloudinary-f8";
+  const cloudName = "gcdchzuk";
+  const uploadPreset = "findyApp";
 
   const urlCloudinary = `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`;
 

@@ -1,6 +1,3 @@
-// const URL_API = "http://localhost:3456/";
-// const URL_API = "http://localhost:5174/";
-
 const URL_API= "https://minibackend-findy-cr53.vercel.app/";  
 
 const endpoints = {
